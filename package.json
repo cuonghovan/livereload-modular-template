@@ -1,0 +1,18 @@
+{
+  "name": "livereload-modular-theme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.17.6",
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.3.0",
+    "gulp-util": "^3.0.7"
+  }
+}

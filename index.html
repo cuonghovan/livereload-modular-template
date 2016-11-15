@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Livereload-modular-test</title>
+	<link rel="stylesheet" type="text/css" href="style/css/style.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+  <div class="module-1">
+    <!-- module-1 here -->
+  </div>
+  <div class="module-2">
+    <!-- module-2 here -->
+  </div>
+  <script>
+    $(".module-1").load("module_1.html");
+    $(".module-2").load("module_2.html");
+  </script>
+  <script type="text/javascript" src="script/main.js"></script>
+</body>
+</html>
