@@ -19,6 +19,6 @@ gulp.task('less', function(){
 gulp.task('watch', ['browser-sync'], function() {
   gulp.watch("style/less/*.less", ['less']);
   gulp.watch("style/css/*.css").on('change', bs.reload);
-  gulp.watch("*.html").on('change', bs.reload);
+  gulp.watch("**/*.html").on('change', bs.reload);
   gulp.watch("script/*.js").on('change', bs.reload);
 });
