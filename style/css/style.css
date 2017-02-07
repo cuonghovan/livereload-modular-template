@@ -1,9 +1,23 @@
 .module-1 p {
-  color: red;
-}
+  color: purple;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
 .module-2 p {
-  color: green;
-}
+  color: orangered;
+  box-shadow: 1px 3px 2px grey; }
+
 .module-3 p {
-  color: blue;
-}
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  color: red;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background: -webkit-linear-gradient(top, white, black);
+  background: linear-gradient(to bottom, white, black); }

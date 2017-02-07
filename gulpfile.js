@@ -1,6 +1,8 @@
 var gulp = require('gulp');
 var bs = require('browser-sync').create();
-var less = require('gulp-less');
+var sass = require('gulp-sass');
+var postcss = require('gulp-postcss');
+var autoprefixer = require('autoprefixer');
 
 gulp.task('browser-sync', function() {
   bs.init({
@@ -11,15 +13,16 @@ gulp.task('browser-sync', function() {
   });
 });
 
-gulp.task('less', function(){
-  gulp.src('style/less/*.less')
-      .pipe(less())
+gulp.task('sass', function(){
+  gulp.src('style/sass/style.scss')
+      .pipe(sass().on('error', sass.logError))
+      .pipe(postcss([autoprefixer()]))
       .pipe(gulp.dest('style/css/'))
       .pipe(bs.stream());
 });
 
-gulp.task('watch', ['less','browser-sync'], function() {
-  gulp.watch("style/less/*.less", ['less']);
+gulp.task('watch', ['sass','browser-sync'], function() {
+  gulp.watch("style/sass/*.scss", ['sass']);
   gulp.watch("**/*.html").on('change', bs.reload);
   gulp.watch("script/*.js").on('change', bs.reload);
 });

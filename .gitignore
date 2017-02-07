@@ -5,7 +5,7 @@ coverage/
 node_modules/
 target/
 tmp/
-
+style/css/
 
 #======================================
 # Extensions
