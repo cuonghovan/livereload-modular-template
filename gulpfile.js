@@ -5,7 +5,8 @@ var less = require('gulp-less');
 gulp.task('browser-sync', function() {
   bs.init({
     server: {
-      baseDir: "./"
+      baseDir: "./",
+      directory: true
     }
   });
 });
@@ -13,12 +14,12 @@ gulp.task('browser-sync', function() {
 gulp.task('less', function(){
   gulp.src('style/less/*.less')
       .pipe(less())
-      .pipe(gulp.dest('style/css/'));
+      .pipe(gulp.dest('style/css/'))
+      .pipe(bs.stream());
 });
 
-gulp.task('watch', ['browser-sync'], function() {
+gulp.task('watch', ['less','browser-sync'], function() {
   gulp.watch("style/less/*.less", ['less']);
-  gulp.watch("style/css/*.css").on('change', bs.reload);
   gulp.watch("**/*.html").on('change', bs.reload);
   gulp.watch("script/*.js").on('change', bs.reload);
 });
