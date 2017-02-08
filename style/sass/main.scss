@@ -2,33 +2,55 @@
 
 // 1. Configuration and helpers
 @import
-  'abstracts/_variables',
-  'abstracts/_functions',
-  'abstracts/_mixins';
+  'abstracts/variables',
+  'abstracts/functions',
+  'abstracts/mixins';
 
 // 2. Vendors
 @import
-  'vendor/_normalize';
+  'vendor/normalize';
+  
+// Core variables and mixins
+@import
+  'vendor/bootstrap/mixins',
+  'vendor/bootstrap/variables';
+
+// Custom Bootstrap Variable
+@import
+  'vendor-extensions/bootstrap/custom_variables';
+  
+// Reset
+@import
+  'vendor/bootstrap/normalize',
+  'vendor/bootstrap/print';
+
+// Core CSS
+@import 
+  'vendor/bootstrap/grid',
+  'vendor/bootstrap/component-animations';
+
+// Components
+@import 
+  'vendor/bootstrap/navs',
+  'vendor/bootstrap/glyphicons';
 
 // 3. Base stuff
 @import
-  'base/_base',
-  'base/_fonts',
-  'base/_typography',
-  'base/_helpers';
+  'base/base',
+  'base/fonts',
+  'base/typography',
+  'base/helpers';
 
 // 4. Layout-related sections
 @import
-  'layout/_header',
-  'layout/_footer';
+  'layout/header',
+  'layout/grid',
+  'layout/footer';
 
 // 5. Components
 @import
-  'components/_button',
-  'components/_module_1',
-  'components/_module_2',
-  'components/_module_3';
+  'components/button';
 
 // 6. Page-specific styles
 @import
-  'pages/_home';
+  'pages/index';
